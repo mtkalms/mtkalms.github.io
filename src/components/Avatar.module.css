@@ -1,0 +1,29 @@
+.container {
+  @apply relative overflow-hidden;
+}
+
+.image {
+  @apply rounded-full object-center;
+}
+
+.badge {
+  @apply absolute w-1/4 h-1/4;
+  @apply bg-green-400 border-2 border-white dark:border-gray-800;
+  @apply rounded-full;
+
+  &.top-left {
+    @apply -top-0 left-0;
+  }
+
+  &.top-right {
+    @apply -top-0 right-0;
+  }
+
+  &.bottom-left {
+    @apply -bottom-0 left-0;
+  }
+
+  &.bottom-right {
+    @apply -bottom-0 right-0;
+  }
+}
