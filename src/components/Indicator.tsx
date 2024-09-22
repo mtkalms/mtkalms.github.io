@@ -1,13 +1,11 @@
 import styles from "./Indicator.module.css";
 import badgeStyles from "./Badge.module.css";
+import { BadgeProps } from "./Badge";
 
-type BadgePosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
 type IndicatorState = "active" | "idle" | "inactive" | "busy";
 
-interface IndicatorProps {
+interface IndicatorProps extends BadgeProps {
   status?: IndicatorState;
-  position?: BadgePosition;
-  className?: string;
 }
 
 function Indicator({

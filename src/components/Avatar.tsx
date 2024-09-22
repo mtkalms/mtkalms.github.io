@@ -1,12 +1,13 @@
 import { ReactElement } from "react";
 import styles from "./Avatar.module.css";
 import Indicator, { IndicatorProps } from "./Indicator";
+import Badge, { BadgeProps } from "./Badge";
 
 interface AvatarProps {
   image: string;
   active?: boolean;
   className?: string;
-  children?: ReactElement<IndicatorProps>;
+  children?: ReactElement<IndicatorProps | BadgeProps>[];
 }
 
 function Avatar({ image, className, children }: AvatarProps) {
@@ -19,6 +20,7 @@ function Avatar({ image, className, children }: AvatarProps) {
 }
 
 Avatar.Indicator = Indicator;
+Avatar.Badge = Badge;
 
 export default Avatar;
 export type { AvatarProps };

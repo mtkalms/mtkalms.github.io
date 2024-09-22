@@ -1,4 +1,10 @@
 .badge {
+  @apply absolute;
+  &.text {
+    @apply text-xs font-bold;
+    @apply bg-purple-600;
+    @apply rounded px-1 py-0.5;
+  }
   &.top-left {
     @apply -top-0 left-0;
   }
