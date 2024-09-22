@@ -1,33 +1,24 @@
+import { ReactElement } from "react";
 import styles from "./Avatar.module.css";
-
-type AvatarBadgePosition =
-  | "top-left"
-  | "top-right"
-  | "bottom-left"
-  | "bottom-right";
+import Indicator, { IndicatorProps } from "./Indicator";
 
 interface AvatarProps {
   image: string;
   active?: boolean;
   className?: string;
-  badgePosition?: AvatarBadgePosition;
+  children?: ReactElement<IndicatorProps>;
 }
 
-function Avatar({
-  image,
-  className,
-  active,
-  badgePosition = "top-left",
-}: AvatarProps) {
+function Avatar({ image, className, children }: AvatarProps) {
   return (
-    <div className={[className, styles.container].join(" ")}>
+    <div className={[styles.container, className].join(" ")}>
       <img src={image} className={styles.image} />
-      {active && (
-        <span className={[styles.badge, styles[badgePosition]].join(" ")} />
-      )}
+      {children}
     </div>
   );
 }
+
+Avatar.Indicator = Indicator;
 
 export default Avatar;
 export type { AvatarProps };

@@ -1,0 +1,18 @@
+.indicator {
+  @apply absolute w-1/4 h-1/4;
+  @apply border-2 border-white dark:border-gray-800;
+  @apply rounded-full;
+
+  &.active {
+    @apply bg-green-400;
+  }
+  &.idle {
+    @apply bg-orange-400;
+  }
+  &.inactive {
+    @apply bg-gray-400;
+  }
+  &.busy {
+    @apply bg-red-400;
+  }
+}
