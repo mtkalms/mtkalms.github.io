@@ -9,7 +9,7 @@
   @apply rounded-full size-full;
   @apply flex items-center justify-center;
   svg {
-    @apply size-5/12;
+    @apply size-6/12;
   }
 }
 
