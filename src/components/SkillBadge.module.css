@@ -1,0 +1,18 @@
+.skill {
+  @apply rounded-full;
+  @apply relative;
+  @apply size-20;
+  @apply bg-fuchsia-800;
+}
+
+.icon {
+  @apply rounded-full size-full;
+  @apply flex items-center justify-center;
+  svg {
+    @apply size-5/12;
+  }
+}
+
+.badge {
+  @apply bg-fuchsia-900;
+}

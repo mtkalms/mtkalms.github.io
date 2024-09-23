@@ -16,7 +16,6 @@ function Indicator({
   return (
     <span
       className={[
-        badgeStyles.badge,
         badgeStyles[position],
         styles.indicator,
         styles[status],

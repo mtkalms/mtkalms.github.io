@@ -10,11 +10,7 @@ interface BadgeProps {
 
 function Badge({ position = "top-left", className, children }: BadgeProps) {
   return (
-    <span
-      className={[styles.badge, styles.text, styles[position], className].join(
-        " "
-      )}
-    >
+    <span className={[styles.badge, styles[position], className].join(" ")}>
       {children}
     </span>
   );

@@ -1,7 +1,8 @@
 .container {
-  @apply relative overflow-hidden;
+  @apply relative overflow-hidden rounded-full;
 }
 
 .image {
   @apply rounded-full object-center;
+  @apply saturate-200;
 }
