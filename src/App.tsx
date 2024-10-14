@@ -3,11 +3,7 @@ import "./App.css";
 import Avatar from "./components/Avatar";
 import SkillBadge from "./components/SkillBadge";
 import Navbar from "./components/Navbar";
-import {
-  FaGithub as Github,
-  FaLinkedin as Linkedin,
-  FaEnvelope as Mail,
-} from "react-icons/fa";
+import SocialBadge from "./components/SocialBadge";
 
 function App() {
   return <>
@@ -29,15 +25,9 @@ function App() {
           <SkillBadge skill="ruby" experience={1} />
         </div>
         <div className="flex flex-row justify-around gap-5 items-center">
-          <a href="https://github.com/mtkalms" target="_blank">
-            <Github size={30} className="hover:fill-pink-200 fill-pink-300 hover:animate-pulse" />
-          </a>
-          <a href="https://www.linkedin.com/in/matthias-kalms/" target="_blank">
-            <Linkedin size={32} className="hover:fill-pink-200 fill-pink-300 hover:animate-pulse" />
-          </a>
-          <a href="mailto:mtkalms@gmail.com" target="_blank">
-            <Mail size={34} className="hover:fill-pink-200 fill-pink-300 hover:animate-pulse"/>
-          </a>
+          <SocialBadge type="Github" href="https://github.com/mtkalms"/>
+          <SocialBadge type="Linkedin" href="https://www.linkedin.com/in/matthias-kalms/"/>
+          <SocialBadge type="Mail" href="mailto:mtkalms@gmail.com"/>
         </div>
       </div>
     </div>
