@@ -32,7 +32,7 @@ interface SkillBadgeProps {
 
 function SkillBadge({ skill, experience, className }: SkillBadgeProps) {
   return (
-    <div className={[styles.skill, className].join(" ")}>
+    <div className={[styles.skill, className].join(" ")} title={`${experience}+ years in ${skill}`}>
       <div className={styles.icon}>
         <Icon skill={skill} />
       </div>
