@@ -3,4 +3,5 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  @apply text-purple-950 dark:text-white;
 }
