@@ -1,5 +1,5 @@
 .container {
-  @apply relative overflow-hidden rounded-full;
+  @apply relative rounded-full;
 }
 
 .image {

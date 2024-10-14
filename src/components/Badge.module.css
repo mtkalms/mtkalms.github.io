@@ -3,16 +3,16 @@
   @apply text-xs font-bold;
   @apply rounded px-1 py-0.5;
   @apply bg-purple-600;
-  &.top-left {
-    @apply top-0 left-0;
-  }
-  &.top-right {
-    @apply top-0 right-0;
-  }
-  &.bottom-left {
-    @apply bottom-0 left-0;
-  }
-  &.bottom-right {
-    @apply bottom-0 right-0;
-  }
+}
+.top-left {
+  @apply top-0 left-0;
+}
+.top-right {
+  @apply top-0 right-0;
+}
+.bottom-left {
+  @apply bottom-0 left-0;
+}
+.bottom-right {
+  @apply bottom-0 right-0;
 }

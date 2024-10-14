@@ -1,13 +1,13 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import styles from "./Avatar.module.css";
-import Indicator, { IndicatorProps } from "./Indicator";
-import Badge, { BadgeProps } from "./Badge";
+import Indicator from "./Indicator";
+import Badge from "./Badge";
 
 interface AvatarProps {
   image: string;
   active?: boolean;
   className?: string;
-  children?: ReactElement<IndicatorProps | BadgeProps>[];
+  children?: ReactNode;
 }
 
 function Avatar({ image, className, children }: AvatarProps) {
