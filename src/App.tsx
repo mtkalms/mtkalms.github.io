@@ -13,7 +13,7 @@ function App() {
     <div className="flex flex-col gap-8 items-center">
       <Avatar
         image={profile}
-        className="w-80 ring-white ring-8 shadow-2xl"
+        className="w-40 sm:w-60 ring-white ring-8 shadow-2xl"
       ></Avatar>
       <div>
         <h1>Hi. I'm Matt.</h1>

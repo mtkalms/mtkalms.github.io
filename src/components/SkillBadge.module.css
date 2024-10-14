@@ -1,7 +1,7 @@
 .skill {
   @apply rounded-full;
   @apply relative;
-  @apply size-20;
+  @apply size-16;
   @apply bg-fuchsia-800;
 }
 
