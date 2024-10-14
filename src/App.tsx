@@ -15,7 +15,7 @@ function App() {
         image={profile}
         className="w-40 sm:w-60 ring-white ring-8 shadow-2xl"
       ></Avatar>
-      <div>
+      <div className="text-white">
         <h1>Hi. I'm Matt.</h1>
         <h2 className="text-2xl font-semibold">I make software.</h2>
       </div>
