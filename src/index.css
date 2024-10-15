@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply bg-purple-500 dark:bg-purple-700;
+}
+
 body {
   margin: 0;
   display: flex;
