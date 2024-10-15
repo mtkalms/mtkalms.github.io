@@ -21,8 +21,12 @@ function App() {
         <div className="grid grid-cols-4 gap-5">
           <SkillBadge skill="python" experience={8} />
           <SkillBadge skill="java" experience={5} />
+          <SkillBadge skill="javascript" experience={5} />
           <SkillBadge skill="typescript" experience={2} />
           <SkillBadge skill="ruby" experience={1} />
+          <SkillBadge skill="react" experience={2} />
+          <SkillBadge skill="tailwind css" experience={2} />
+          <SkillBadge skill="vaadin" experience={2} />
         </div>
         <div className="flex flex-row justify-around gap-5 items-center">
           <SocialBadge type="Github" href="https://github.com/mtkalms"/>

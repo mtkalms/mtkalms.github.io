@@ -1,11 +1,10 @@
 import Badge from "./Badge";
-import { FaPython as Python } from "react-icons/fa";
 import { AiOutlineRuby as Ruby } from "react-icons/ai";
-import { SiTypescript as Typescript } from "react-icons/si";
-import { FaJava as Java } from "react-icons/fa";
+import { SiTypescript as Typescript, SiTailwindcss as Tailwind, SiJavascript as Javascript } from "react-icons/si";
+import { FaPython as Python, FaJava as Java, FaReact as React, FaVaadin as Vaadin } from "react-icons/fa";
 import styles from "./SkillBadge.module.css";
 
-type Skill = "python" | "ruby" | "typescript" | "javascript" | "cpp" | "java";
+type Skill = "python" | "ruby" | "typescript" | "javascript" | "vaadin" | "java" | "react" | "tailwind css";
 
 interface IconProps {
   skill: Skill;
@@ -19,8 +18,16 @@ function Icon({ skill }: IconProps) {
       return <Ruby className="rotate-45 -translate-y-1" />;
     case "typescript":
       return <Typescript />;
+    case "javascript":
+      return <Javascript />;
     case "java":
       return <Java />;
+    case "react":
+      return <React/>;
+    case "tailwind css":
+      return <Tailwind/>;
+    case "vaadin":
+      return <Vaadin/>;
   }
 }
 
