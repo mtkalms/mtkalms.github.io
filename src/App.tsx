@@ -15,18 +15,23 @@ function App() {
           className="w-40 sm:w-60 ring-white ring-8 shadow-2xl"
         />
         <div>
-          <h1>Hi. I'm Matt.</h1>
-          <h2 className="text-2xl font-semibold">I make software.</h2>
+          <h1 className="text-6xl font-thin">
+            <span className="font-normal">Hi. </span> 
+            I am <span className="font-normal underline decoration-4 underline-offset-4">Matt</span>hias.</h1>
+          <h2 className="text-4xl font-thin">I make unusable software usable.</h2>
         </div>
-        <div className="grid grid-cols-4 gap-5">
-          <SkillBadge skill="python" experience={8} />
-          <SkillBadge skill="java" experience={5} />
-          <SkillBadge skill="javascript" experience={5} />
-          <SkillBadge skill="typescript" experience={2} />
-          <SkillBadge skill="ruby" experience={1} />
-          <SkillBadge skill="react" experience={2} />
-          <SkillBadge skill="tailwind css" experience={2} />
-          <SkillBadge skill="vaadin" experience={2} />
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex gap-5">
+            <SkillBadge skill="python" experience={8} />
+            <SkillBadge skill="java" experience={5} />
+            <SkillBadge skill="typescript" experience={2} />
+            <SkillBadge skill="ruby" experience={1} />
+          </div>
+          <div className="flex gap-5">
+            <SkillBadge skill="react" experience={2} />
+            <SkillBadge skill="tailwind css" experience={2} />
+            <SkillBadge skill="vaadin" experience={2} />
+          </div>
         </div>
         <div className="flex flex-row justify-around gap-5 items-center">
           <SocialBadge type="Github" href="https://github.com/mtkalms"/>
