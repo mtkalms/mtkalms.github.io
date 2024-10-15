@@ -13,6 +13,10 @@ interface ThemeModeIconProps extends IconBaseProps {
   mode: ThemeMode;
 }
 
+function getThemeMode(): ThemeMode {
+  return "theme" in localStorage ? localStorage.theme : "auto";
+}
+
 function applyThemeMode(mode: ThemeMode) {
   switch (mode) {
     case "dark":
@@ -43,13 +47,11 @@ function ThemeModeIcon({ mode, ...props }: ThemeModeIconProps) {
 }
 
 function ThemeModeToggle() {
-  const [mode, setMode] = useState<ThemeMode>("auto");
+  const [mode, setMode] = useState<ThemeMode>(getThemeMode());
 
   useEffect(() => {
     if (mode === "auto") {
-      let preference = window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+      let preference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       let localTheme = "theme" in localStorage ? localStorage.theme : "light";
       if (preference !== localTheme) {
         applyThemeMode("auto");
