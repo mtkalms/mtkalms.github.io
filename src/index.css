@@ -6,13 +6,15 @@ html {
   @apply bg-purple-600 dark:bg-purple-700;
 }
 
-html::before, html::after {
+html::before {
 	z-index: -1;
 	position: fixed;
-	height: 100vh;
+  top: -10vh;
+	height: 120vh;
 	width: 100vw;
+  padding-top: 13vh;
 	content: "That's all Folks!";
-  @apply p-3 text-center text-white text-xl text-opacity-50;
+  @apply text-center text-purple-950 dark:text-white text-xl;
   @apply bg-gradient-to-tr from-pink-500 to-purple-600 dark:from-pink-700 dark:to-purple-800;
 }
 
