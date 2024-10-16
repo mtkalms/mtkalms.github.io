@@ -3,19 +3,16 @@
 @tailwind utilities;
 
 html {
-  @apply bg-purple-600 dark:bg-purple-700;
+  @apply bg-fuchsia-600 dark:bg-fuchsia-800;
 }
 
 html::before {
 	z-index: -1;
 	position: fixed;
-  top: -10vh;
 	height: 120vh;
 	width: 100vw;
-  padding-top: 13vh;
 	content: "That's all Folks!";
-  @apply text-center text-purple-950 dark:text-white text-xl;
-  @apply bg-gradient-to-tr from-pink-500 to-purple-600 dark:from-pink-700 dark:to-purple-800;
+  @apply p-9 text-center text-purple-950 dark:text-white text-xl;
 }
 
 body {
