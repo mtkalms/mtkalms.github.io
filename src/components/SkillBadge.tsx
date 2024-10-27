@@ -1,50 +1,61 @@
-import Badge from "./Badge";
+import { IconBaseProps } from "react-icons";
 import { AiOutlineRuby as Ruby } from "react-icons/ai";
-import { SiTypescript as Typescript, SiTailwindcss as Tailwind, SiJavascript as Javascript } from "react-icons/si";
-import { FaPython as Python, FaJava as Java, FaReact as React, FaVaadin as Vaadin } from "react-icons/fa";
+import {
+  FaJava as Java,
+  FaPython as Python,
+  FaReact as React,
+  FaVaadin as Vaadin,
+} from "react-icons/fa";
+import {
+  SiJavascript as Javascript,
+  SiTailwindcss as Tailwind,
+  SiTypescript as Typescript,
+} from "react-icons/si";
+import Badge from "./Badge";
 import styles from "./SkillBadge.module.css";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 type Skill = "python" | "ruby" | "typescript" | "javascript" | "vaadin" | "java" | "react" | "tailwind css";
 
-interface IconProps {
+interface SkillIconProps extends IconBaseProps {
   skill: Skill;
 }
 
-function Icon({ skill }: IconProps) {
+interface SkillBadgeProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  skill: Skill;
+  experience: number;
+}
+
+function SkillIcon({skill, ...props}: SkillIconProps) {
   switch (skill) {
     case "python":
-      return <Python />;
+      return <Python {...props}/>;
     case "ruby":
-      return <Ruby className="rotate-45 -translate-y-1" />;
+      return <Ruby className="rotate-45 -translate-y-1" {...props}/>;
     case "typescript":
-      return <Typescript />;
+      return <Typescript {...props}/>;
     case "javascript":
-      return <Javascript />;
+      return <Javascript {...props}/>;
     case "java":
-      return <Java />;
+      return <Java {...props}/>;
     case "react":
-      return <React/>;
+      return <React {...props}/>;
     case "tailwind css":
-      return <Tailwind/>;
+      return <Tailwind {...props}/>;
     case "vaadin":
-      return <Vaadin/>;
+      return <Vaadin {...props}/>;
   }
 }
 
-interface SkillBadgeProps {
-  skill: Skill;
-  experience: number;
-  className?: string;
-}
-
-function SkillBadge({ skill, experience, className }: SkillBadgeProps) {
+function SkillBadge({ skill, experience, className, ...props }: SkillBadgeProps) {
   return (
-    <div className={[styles.skill, className].join(" ")} title={`${experience}+ years in ${skill}`}>
+    <div className={[styles.skill, className].join(" ")} 
+      title={`${experience}+ years in ${skill}`}
+      {...props}>
       <div className={styles.icon}>
-        <Icon skill={skill} />
+        <SkillIcon skill={skill} />
       </div>
-      <Badge
-        position="top-right"
+      <Badge position="top-right"
         className={styles.badge}
       >{`${experience}+`}</Badge>
     </div>
