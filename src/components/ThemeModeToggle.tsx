@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ButtonHTMLAttributes, DetailedHTMLProps, useEffect, useState } from "react";
 import { IconBaseProps } from "react-icons";
 import {
   TbSun as Sun,
@@ -6,15 +6,19 @@ import {
   TbSunMoon as SunMoon,
 } from "react-icons/tb";
 
-const MODES = ["dark", "light", "auto"];
+const MODES = ["dark", "light", "system"];
 type ThemeMode = (typeof MODES)[number];
 
 interface ThemeModeIconProps extends IconBaseProps {
-  mode: ThemeMode;
+  mode?: ThemeMode;
+}
+
+interface ThemeModeToggleProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  size?: number;
 }
 
 function getThemeMode(): ThemeMode {
-  return "theme" in localStorage ? localStorage.theme : "auto";
+  return "theme" in localStorage ? localStorage.theme : "system";
 }
 
 function applyThemeMode(mode: ThemeMode) {
@@ -41,23 +45,14 @@ function ThemeModeIcon({ mode, ...props }: ThemeModeIconProps) {
       return <Moon {...props} />;
     case "light":
       return <Sun {...props} />;
+    case "system":
     default:
       return <SunMoon {...props} />;
   }
 }
 
-function ThemeModeToggle() {
+function ThemeModeToggle({size = 25, ...props}: ThemeModeToggleProps) {
   const [mode, setMode] = useState<ThemeMode>(getThemeMode());
-
-  useEffect(() => {
-    if (mode === "auto") {
-      let preference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      let localTheme = "theme" in localStorage ? localStorage.theme : "light";
-      if (preference !== localTheme) {
-        applyThemeMode("auto");
-      }
-    }
-  });
 
   useEffect(() => {
     applyThemeMode(mode);
@@ -68,13 +63,16 @@ function ThemeModeToggle() {
   }
 
   return (
-    <button type="button" onClick={toggle}>
-      <ThemeModeIcon size={30} mode={mode}
-        title={mode === "auto" ? "OS default" : "mode"}
+    <button type="button" onClick={toggle} {...props}>
+      <ThemeModeIcon size={25} mode={mode}
         className="stroke-purple-950 dark:stroke-white"
+        title={`Toggle theme (${mode})`}
+        width={size} height={size}  
+        suppressHydrationWarning
       />
     </button>
   );
 }
 
 export default ThemeModeToggle;
+export type { ThemeModeToggleProps };
