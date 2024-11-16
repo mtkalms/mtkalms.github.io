@@ -12,21 +12,24 @@ import {
   SiTypescript as Typescript,
 } from "react-icons/si";
 import Badge from "./Badge";
-import styles from "./SkillBadge.module.css";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 type Skill = "python" | "ruby" | "typescript" | "javascript" | "vaadin" | "java" | "react" | "tailwind css";
+type DivElement = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 interface SkillIconProps extends IconBaseProps {
   skill: Skill;
 }
 
-interface SkillBadgeProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+interface SkillBadgeProps extends Omit<DivElement, "children"> {
   skill: Skill;
   experience: number;
 }
 
-function SkillIcon({skill, ...props}: SkillIconProps) {
+function SkillIcon({
+  skill, 
+  ...props
+}: SkillIconProps) {
   switch (skill) {
     case "python":
       return <Python {...props}/>;
@@ -47,17 +50,22 @@ function SkillIcon({skill, ...props}: SkillIconProps) {
   }
 }
 
-function SkillBadge({ skill, experience, className, ...props }: SkillBadgeProps) {
+function SkillBadge({ 
+  skill, 
+  experience, 
+  className, 
+  ...props 
+}: SkillBadgeProps) {
   return (
-    <div className={[styles.skill, className].join(" ")} 
+    <div className={`rounded-full relative size-16 bg-fuchsia-800 ${className}`} 
       title={`${experience}+ years in ${skill}`}
       {...props}>
-      <div className={styles.icon}>
-        <SkillIcon skill={skill} />
+      <div className="rounded-full size-full flex items-center justify-center text-white">
+        <SkillIcon skill={skill} className="size-6/12"/>
       </div>
-      <Badge position="top-right"
-        className={styles.badge}
-      >{`${experience}+`}</Badge>
+      <Badge position="top-right" className="bg-fuchsia-900 text-white">
+        {`${experience}+`}
+      </Badge>
     </div>
   );
 }
