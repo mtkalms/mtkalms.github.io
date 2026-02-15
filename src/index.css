@@ -1,17 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 html {
   @apply bg-fuchsia-600 dark:bg-fuchsia-800;
 }
 
 html::before {
-	z-index: -1;
-	position: fixed;
-	height: 120vh;
-	width: 100vw;
-	content: "That's all Folks!";
+  z-index: -1;
+  position: fixed;
+  height: 120vh;
+  width: 100vw;
+  content: "That's all Folks!";
   @apply p-9 text-center text-purple-950 dark:text-white text-xl;
 }
 

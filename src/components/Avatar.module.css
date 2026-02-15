@@ -1,3 +1,5 @@
+@reference "../index.css";
+
 .container {
   @apply relative rounded-full;
 }

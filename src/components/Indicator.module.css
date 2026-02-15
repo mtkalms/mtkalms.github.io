@@ -1,3 +1,5 @@
+@reference "../index.css";
+
 .indicator {
   @apply w-1/4 h-1/4;
   @apply border-2 border-white dark:border-gray-800;

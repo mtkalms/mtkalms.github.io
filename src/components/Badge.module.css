@@ -1,3 +1,5 @@
+@reference "../index.css";
+
 .badge {
   @apply absolute;
   @apply text-xs font-bold;
