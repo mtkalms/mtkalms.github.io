@@ -20,5 +20,5 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  @apply bg-gradient-to-tr from-pink-400 to-purple-500 dark:from-pink-600 dark:to-purple-700;
+  @apply bg-linear-to-tr from-pink-400 to-purple-500 dark:from-pink-600 dark:to-purple-700;
 }
