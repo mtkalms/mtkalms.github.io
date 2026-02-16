@@ -1,9 +1,7 @@
 import profile from "./assets/profile.jpg";
 import "./App.css";
 import Avatar from "./components/Avatar";
-import SkillBadge from "./components/SkillBadge";
 import Navbar from "./components/Navbar";
-import SocialBadge from "./components/SocialBadge";
 
 function App() {
   return (
