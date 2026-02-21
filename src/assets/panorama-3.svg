@@ -1,0 +1,9 @@
+<svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,400 L0,250 L200,280 L400,240 L600,270 L800,230 L1000,260 L1200,220 L1200,400 Z" />
+  <polygon points="100,280 110,220 120,280" />
+  <polygon points="300,260 310,200 320,260" />
+  <polygon points="500,290 510,230 520,290" />
+  <polygon points="700,250 710,190 720,250" />
+  <polygon points="900,280 910,220 920,280" />
+  <polygon points="1100,240 1110,180 1120,240" />
+</svg>

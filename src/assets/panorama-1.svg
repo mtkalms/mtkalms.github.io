@@ -1,0 +1,15 @@
+<svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,400 L0,320 L100,340 L200,310 L300,335 L400,305 L500,330 L600,300 L700,325 L800,295 L900,320 L1000,290 L1100,315 L1200,285 L1200,400 Z" />
+  <polygon points="50,350 60,270 70,350" />
+  <polygon points="150,330 160,250 170,330" />
+  <polygon points="250,345 260,265 270,345" />
+  <polygon points="350,320 360,240 370,320" />
+  <polygon points="450,345 460,265 470,345" />
+  <polygon points="550,315 560,235 570,315" />
+  <polygon points="650,340 660,260 670,340" />
+  <polygon points="750,310 760,230 770,310" />
+  <polygon points="850,335 860,255 870,335" />
+  <polygon points="950,305 960,225 970,305" />
+  <polygon points="1050,330 1060,250 1070,330" />
+  <polygon points="1150,300 1160,220 1170,300" />
+</svg>
