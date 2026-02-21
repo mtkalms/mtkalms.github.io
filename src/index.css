@@ -13,6 +13,16 @@
   --accent-2: #c5a030;
 }
 
+.dark {
+  --sunrises: #1a1535;
+  --forest-1: #3d4a6e;
+  --forest-2: #2f3d5e;
+  --forest-3: #25334f;
+  --forest-4: #1a2640;
+  --forest-5: #121b30;
+  --forest-6: #0a0e1f;
+}
+
 html {
   background: var(--forest-6);
 }
