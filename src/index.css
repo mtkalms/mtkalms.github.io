@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --sunrises: #dfb3b7;
+  --forest-1: #7c89a7;
+  --forest-2: #69869b;
+  --forest-3: #4a6f73;
+  --forest-4: #365b5e;
+  --forest-5: #2c4d4e;
+  --accent-1: #9a29a6;
+  --accent-2: #c5a030;
+}
+
 html {
   @apply bg-fuchsia-600 dark:bg-fuchsia-800;
 }
@@ -16,9 +27,7 @@ html::before {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  @apply bg-linear-to-tr from-pink-400 to-purple-500 dark:from-pink-600 dark:to-purple-700;
+  background: var(--forest-5);
 }

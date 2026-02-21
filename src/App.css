@@ -3,7 +3,14 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 8rem 2rem;
+  padding: 0;
   text-align: center;
   @apply text-purple-950 dark:text-white;
+  min-height: 200vh;
+}
+
+.main {
+  margin-top: 100vh;
+  padding: 8rem 2rem;
+  min-height: 100vh;
 }
