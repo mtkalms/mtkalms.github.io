@@ -68,3 +68,12 @@
 .layer-1 svg polygon {
   fill: var(--forest-5);
 }
+
+.layer-0 {
+  transform: translateY(calc(var(--scroll-y, 0) * -0.9px));
+}
+
+.layer-0 svg path,
+.layer-0 svg polygon {
+  fill: var(--forest-6);
+}

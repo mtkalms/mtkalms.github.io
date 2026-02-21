@@ -8,12 +8,13 @@
   --forest-3: #4a6f73;
   --forest-4: #365b5e;
   --forest-5: #2c4d4e;
+  --forest-6: #0f2324;
   --accent-1: #9a29a6;
   --accent-2: #c5a030;
 }
 
 html {
-  @apply bg-fuchsia-600 dark:bg-fuchsia-800;
+  background: var(--forest-6);
 }
 
 html::before {
@@ -29,5 +30,5 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--forest-5);
+  background: var(--forest-6);
 }
