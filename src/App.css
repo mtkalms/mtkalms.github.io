@@ -6,13 +6,13 @@
   padding: 0;
   text-align: center;
   @apply text-white;
-  min-height: 200vh;
+  min-height: 100vh;
 }
 
 .main {
   margin-top: 100vh;
   padding: 8rem 2rem;
-  min-height: 100vh;
+  min-height: auto;
 }
 
 .glow-heading {
