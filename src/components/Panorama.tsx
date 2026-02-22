@@ -1,30 +1,49 @@
+import { useEffect } from "react";
 import "./Panorama.css";
-import Panorama5 from "@/assets/panorama-5.svg?react";
-import Panorama4 from "@/assets/panorama-4.svg?react";
-import Panorama3 from "@/assets/panorama-3.svg?react";
-import Panorama2 from "@/assets/panorama-2.svg?react";
-import Panorama1 from "@/assets/panorama-1.svg?react";
-import Panorama0 from "@/assets/panorama-0.svg?react";
 
-const layers = [
-  { Component: Panorama5, index: 5 },
-  { Component: Panorama4, index: 4 },
-  { Component: Panorama3, index: 3 },
-  { Component: Panorama2, index: 2 },
-  { Component: Panorama1, index: 1 },
-  { Component: Panorama0, index: 0 },
-];
+interface PanoramaProps {
+  children: React.ReactNode;
+  className?: string;
+}
 
-function Panorama() {
+interface PanoramaLayerProps {
+  children: React.ReactNode;
+  className?: string;
+  speed: number;
+}
+
+function Panorama({ children, className }: PanoramaProps) {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      document.documentElement.style.setProperty(
+        "--scroll-y",
+        scrollY.toString(),
+      );
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="panorama">
-      {layers.map(({ Component, index }) => (
-        <div key={index} className={`panorama-layer layer-${index}`}>
-          <Component />
-        </div>
-      ))}
+    <div className={`panorama overflow-hidden ${className}`}>{children}</div>
+  );
+}
+
+function PanoramaLayer({ children, className, speed }: PanoramaLayerProps) {
+  return (
+    <div
+      className={`panorama-layer absolute bottom-0 left-0 w-full h-full will-change-transform ${className}`}
+      style={{
+        transform: `translateY(calc(var(--scroll-y, 0) * -${speed}px))`,
+      }}
+    >
+      {children}
     </div>
   );
 }
+
+Panorama.Layer = PanoramaLayer;
 
 export default Panorama;
