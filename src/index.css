@@ -11,7 +11,6 @@
   --forest-6: #0f2324;
   --accent-1: #9a29a6;
   --accent-2: #c5a030;
-  transition: background-color 0.5s ease;
 }
 
 .dark {
@@ -42,5 +41,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: var(--forest-6);
-  transition: background-color 0.5s ease;
+}
+
+.theme-transition-enabled {
+  transition: background-color 0.75s ease;
+  body {
+    transition: background-color 0.75s ease;
+  }
 }

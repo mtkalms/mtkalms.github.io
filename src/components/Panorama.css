@@ -7,7 +7,6 @@
   overflow: hidden;
   z-index: -1;
   background: var(--sunrises);
-  transition: background-color 0.5s ease;
 }
 
 .panorama-layer {
@@ -17,14 +16,26 @@
   width: 100%;
   height: 100%;
   will-change: transform;
+  svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.panorama-layer svg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.theme-transition-enabled {
+  .panorama {
+    transition: background-color 0.5s ease;
+  }
+  .panorama-layer {
+    svg,
+    svg path,
+    svg polygon {
+      transition: fill 0.75s ease;
+    }
+  }
 }
 
 .layer-5 {
@@ -33,7 +44,6 @@
 
 .layer-5 svg path {
   fill: var(--forest-1);
-  transition: fill 0.5s ease;
 }
 
 .layer-4 {
@@ -42,7 +52,6 @@
 
 .layer-4 svg path {
   fill: var(--forest-2);
-  transition: fill 0.5s ease;
 }
 
 .layer-3 {
@@ -52,7 +61,6 @@
 .layer-3 svg path,
 .layer-3 svg polygon {
   fill: var(--forest-3);
-  transition: fill 0.5s ease;
 }
 
 .layer-2 {
@@ -62,7 +70,6 @@
 .layer-2 svg path,
 .layer-2 svg polygon {
   fill: var(--forest-4);
-  transition: fill 0.5s ease;
 }
 
 .layer-1 {
@@ -72,7 +79,6 @@
 .layer-1 svg path,
 .layer-1 svg polygon {
   fill: var(--forest-5);
-  transition: fill 0.5s ease;
 }
 
 .layer-0 {
@@ -82,5 +88,4 @@
 .layer-0 svg path,
 .layer-0 svg polygon {
   fill: var(--forest-6);
-  transition: fill 0.5s ease;
 }
