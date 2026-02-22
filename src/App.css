@@ -14,3 +14,40 @@
   padding: 8rem 2rem;
   min-height: 100vh;
 }
+
+.glow-heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(154, 41, 166, 0.6),
+    0 0 70px rgba(154, 41, 166, 0.4),
+    0 0 80px rgba(154, 41, 166, 0.3);
+}
+
+.text-column {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+.text-column p {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .glow-heading {
+    font-size: 2rem;
+  }
+  
+  .text-column {
+    font-size: 1rem;
+  }
+}
