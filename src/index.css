@@ -26,7 +26,6 @@
 
 html {
   background: var(--forest-6);
-  transition: background-color 0.5s ease;
 }
 
 html::before {
@@ -35,7 +34,7 @@ html::before {
   height: 120vh;
   width: 100vw;
   content: "That's all Folks!";
-  @apply p-9 text-center text-purple-950 dark:text-white text-xl;
+  @apply p-9 text-center text-white text-xl;
 }
 
 body {

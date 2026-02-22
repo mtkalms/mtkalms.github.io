@@ -1,4 +1,9 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, useEffect, useState } from "react";
+import {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  useEffect,
+  useState,
+} from "react";
 import { IconBaseProps } from "react-icons";
 import {
   TbSun as Sun,
@@ -13,7 +18,10 @@ interface ThemeModeIconProps extends IconBaseProps {
   mode?: ThemeMode;
 }
 
-interface ThemeModeToggleProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+interface ThemeModeToggleProps extends DetailedHTMLProps<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+> {
   size?: number;
 }
 
@@ -22,6 +30,7 @@ function getThemeMode(): ThemeMode {
 }
 
 function applyThemeMode(mode: ThemeMode) {
+  document.documentElement.classList.add("theme-transition-enabled");
   switch (mode) {
     case "dark":
       localStorage.theme = mode;
@@ -51,7 +60,7 @@ function ThemeModeIcon({ mode, ...props }: ThemeModeIconProps) {
   }
 }
 
-function ThemeModeToggle({size = 25, ...props}: ThemeModeToggleProps) {
+function ThemeModeToggle({ size = 25, ...props }: ThemeModeToggleProps) {
   const [mode, setMode] = useState<ThemeMode>(getThemeMode());
 
   useEffect(() => {
@@ -64,10 +73,13 @@ function ThemeModeToggle({size = 25, ...props}: ThemeModeToggleProps) {
 
   return (
     <button type="button" onClick={toggle} {...props}>
-      <ThemeModeIcon size={25} mode={mode}
-        className="stroke-purple-950 dark:stroke-white"
+      <ThemeModeIcon
+        size={25}
+        mode={mode}
+        className="stroke-white"
         title={`Toggle theme (${mode})`}
-        width={size} height={size}  
+        width={size}
+        height={size}
         suppressHydrationWarning
       />
     </button>

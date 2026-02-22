@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   min-height: 60vh;
-  background: var(--forest-6);
   max-width: 800px;
   margin: 4rem auto 0;
   padding: 4rem 2rem;
@@ -43,4 +42,3 @@
   position: relative;
   z-index: 0;
 }
-

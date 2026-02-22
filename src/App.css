@@ -5,7 +5,7 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  @apply text-purple-950 dark:text-white;
+  @apply text-white;
   min-height: 200vh;
 }
 
@@ -16,19 +16,20 @@
 }
 
 .glow-heading {
-  font-size: 3.5rem;
+  font-size: 6rem;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 2rem;
-  color: #ffffff;
-  text-shadow: 
-    0 0 10px rgba(255, 255, 255, 0.8),
-    0 0 20px rgba(255, 255, 255, 0.6),
-    0 0 30px rgba(255, 255, 255, 0.4),
-    0 0 40px rgba(154, 41, 166, 0.6),
-    0 0 70px rgba(154, 41, 166, 0.4),
-    0 0 80px rgba(154, 41, 166, 0.3);
+}
+.dark {
+  .glow-heading {
+    text-shadow:
+      0 0 5px rgba(255, 255, 255, 0.6),
+      0 0 10px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(255, 255, 255, 0.2);
+  }
 }
 
 .text-column {
@@ -46,7 +47,7 @@
   .glow-heading {
     font-size: 2rem;
   }
-  
+
   .text-column {
     font-size: 1rem;
   }
