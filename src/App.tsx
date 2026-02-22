@@ -1,13 +1,11 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Panorama from "./sections/Panorama";
-import { useParallax } from "./components/Parallax";
 import Textual from "./sections/Textual";
 import SocialBadge from "./components/SocialBadge";
 import Introduction from "./sections/Introduction";
 
 function App() {
-  useParallax();
   return (
     <>
       <Navbar />

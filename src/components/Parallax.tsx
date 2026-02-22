@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 interface ParallaxProps {
   children: React.ReactNode;
@@ -11,24 +11,27 @@ interface ParallaxLayerProps {
   speed: number;
 }
 
-function useParallax() {
+function Parallax({ children, className }: ParallaxProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      document.documentElement.style.setProperty(
-        "--scroll-y",
-        scrollY.toString(),
-      );
+      const relativeScroll = window.scrollY - el.offsetTop;
+      el.style.setProperty("--scroll-y", relativeScroll.toString());
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-}
 
-function Parallax({ children, className }: ParallaxProps) {
   return (
-    <div className={`parallax overflow-hidden ${className}`}>{children}</div>
+    <div ref={ref} className={`parallax overflow-hidden ${className}`}>
+      {children}
+    </div>
   );
 }
 
@@ -48,4 +51,3 @@ function ParallaxLayer({ children, className, speed }: ParallaxLayerProps) {
 Parallax.Layer = ParallaxLayer;
 
 export default Parallax;
-export { useParallax };
