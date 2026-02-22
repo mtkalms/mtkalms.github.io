@@ -1,18 +1,18 @@
 import { useEffect } from "react";
-import "./Panorama.css";
+import "./Parallax.css";
 
-interface PanoramaProps {
+interface ParallaxProps {
   children: React.ReactNode;
   className?: string;
 }
 
-interface PanoramaLayerProps {
+interface ParallaxLayerProps {
   children: React.ReactNode;
   className?: string;
   speed: number;
 }
 
-function Panorama({ children, className }: PanoramaProps) {
+function Parallax({ children, className }: ParallaxProps) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -27,14 +27,14 @@ function Panorama({ children, className }: PanoramaProps) {
   }, []);
 
   return (
-    <div className={`panorama overflow-hidden ${className}`}>{children}</div>
+    <div className={`parallax overflow-hidden ${className}`}>{children}</div>
   );
 }
 
-function PanoramaLayer({ children, className, speed }: PanoramaLayerProps) {
+function ParallaxLayer({ children, className, speed }: ParallaxLayerProps) {
   return (
     <div
-      className={`panorama-layer absolute bottom-0 left-0 w-full h-full will-change-transform ${className}`}
+      className={`parallax-layer absolute bottom-0 left-0 w-full h-full will-change-transform ${className}`}
       style={{
         transform: `translateY(calc(var(--scroll-y, 0) * -${speed}px))`,
       }}
@@ -44,6 +44,6 @@ function PanoramaLayer({ children, className, speed }: PanoramaLayerProps) {
   );
 }
 
-Panorama.Layer = PanoramaLayer;
+Parallax.Layer = ParallaxLayer;
 
-export default Panorama;
+export default Parallax;
