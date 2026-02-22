@@ -6,6 +6,7 @@ import ParallaxBranches from "./components/ParallaxBranches";
 import Branch1 from "./assets/branch-1.svg?react";
 import Branch2 from "./assets/branch-2.svg?react";
 import PanoramaSection from "./sections/PanoramaSection";
+import { useParallax } from "./components/Parallax";
 
 const branchLayers = [
   { Component: Branch1, speed: -0.15 },
@@ -13,6 +14,7 @@ const branchLayers = [
 ];
 
 function App() {
+  useParallax();
   return (
     <>
       <Navbar />

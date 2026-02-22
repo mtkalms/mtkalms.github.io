@@ -12,7 +12,7 @@ interface ParallaxLayerProps {
   speed: number;
 }
 
-function Parallax({ children, className }: ParallaxProps) {
+function useParallax() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -25,7 +25,9 @@ function Parallax({ children, className }: ParallaxProps) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+}
 
+function Parallax({ children, className }: ParallaxProps) {
   return (
     <div className={`parallax overflow-hidden ${className}`}>{children}</div>
   );
@@ -47,3 +49,4 @@ function ParallaxLayer({ children, className, speed }: ParallaxLayerProps) {
 Parallax.Layer = ParallaxLayer;
 
 export default Parallax;
+export { useParallax };
