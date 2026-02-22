@@ -32,7 +32,9 @@ function SocialIcon({ type, ...props }: SocialIconProps) {
 function SocialBadge({ type, href, className, ...props }: SocialBadgeProps) {
   return (
     <a href={href} target="_blank" className="className">
-      <SocialIcon type={type} size={30}
+      <SocialIcon
+        type={type}
+        size={30}
         className=" fill-white dark:hover:fill-pink-200 dark:fill-pink-300 hover:animate-pulse"
         {...props}
       />

@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Panorama from "./sections/Panorama";
 import { useParallax } from "./components/Parallax";
 import Textual from "./sections/Textual";
+import SocialBadge from "./components/SocialBadge";
 
 function App() {
   useParallax();
@@ -29,6 +30,18 @@ function App() {
           </div>
         </div>
         <Textual />
+        <footer className="w-full py-16 mt-16 text-center">
+          <div className="flex justify-center gap-6 mb-6">
+            <SocialBadge
+              type="Linkedin"
+              href="https://linkedin.com/in/matthias-kalms"
+            />
+            <SocialBadge type="Github" href="https://github.com/mtkalms" />
+          </div>
+          <p className="text-sm opacity-70">
+            © {new Date().getFullYear()} mtkalms. All rights reserved.
+          </p>
+        </footer>
       </div>
     </>
   );
