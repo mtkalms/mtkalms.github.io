@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import "./Parallax.css";
 
 interface ParallaxProps {
   children: React.ReactNode;

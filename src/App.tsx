@@ -2,7 +2,7 @@ import profile from "./assets/profile.jpg";
 import "./App.css";
 import Avatar from "./components/Avatar";
 import Navbar from "./components/Navbar";
-import PanoramaSection from "./sections/PanoramaSection";
+import Panorama from "./sections/Panorama";
 import { useParallax } from "./components/Parallax";
 import Textual from "./sections/Textual";
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <PanoramaSection />
+      <Panorama />
       <div className="main">
         <div className="flex flex-col gap-8 items-center">
           <Avatar

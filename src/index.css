@@ -11,6 +11,9 @@
   --forest-6: #0f2324;
   --accent-1: #9a29a6;
   --accent-2: #c5a030;
+
+  --horizon-transition: 0.75s;
+  --forest-transition: 1.25s;
 }
 
 .dark {
@@ -44,8 +47,20 @@ body {
 }
 
 .theme-transition-enabled {
-  transition: background-color 0.75s ease;
+  .horizon {
+    transition: background-color var(--horizon-transition) ease;
+  }
+
+  div.theme-transition {
+    transition: background-color var(--forest-transition) ease;
+  }
+
+  svg.theme-transition {
+    transition: fill var(--forest-transition) ease;
+  }
+
+  html,
   body {
-    transition: background-color 0.75s ease;
+    transition: background-color var(--forest-transition) ease;
   }
 }

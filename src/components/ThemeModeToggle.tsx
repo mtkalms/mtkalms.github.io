@@ -30,7 +30,6 @@ function getThemeMode(): ThemeMode {
 }
 
 function applyThemeMode(mode: ThemeMode) {
-  document.documentElement.classList.add("theme-transition-enabled");
   switch (mode) {
     case "dark":
       localStorage.theme = mode;
@@ -68,6 +67,7 @@ function ThemeModeToggle({ size = 25, ...props }: ThemeModeToggleProps) {
   }, [mode]);
 
   function toggle() {
+    document.documentElement.classList.add("theme-transition-enabled");
     setMode(MODES[(MODES.indexOf(mode) + 1) % MODES.length]);
   }
 
