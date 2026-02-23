@@ -1,6 +1,26 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("/fonts/CascadiaCode.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("/fonts/CascadiaCodeItalic.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --font-mono: "Cascadia Code", ui-monospace, monospace;
+}
+
 :root {
   --horizon: #dfb3b7;
   --forest-1: #7c89a7;
@@ -62,5 +82,15 @@ body {
   html,
   body {
     transition: background-color var(--forest-transition) ease;
+  }
+}
+
+.dark {
+  .glow {
+    text-shadow:
+      0 0 5px rgba(255, 255, 255, 0.6),
+      0 0 10px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(255, 255, 255, 0.2);
   }
 }
