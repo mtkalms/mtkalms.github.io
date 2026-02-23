@@ -5,8 +5,8 @@ function Textual() {
     <div className="min-h-screen flex flex-col items-center justify-center text-center">
       <div>
         <Parallax className="relative overflow-visible">
-          <Parallax.Layer speed={0.1} className="relative t-12">
-            <h2 className="glow-heading">
+          <Parallax.Layer speed={0.05} className="relative t-12">
+            <h2 className="glow-heading leading-none">
               Textual Light <br />
               and Magic
             </h2>
