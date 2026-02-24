@@ -26,6 +26,7 @@ function Panorama() {
       </Parallax.Layer>
       <Parallax.Layer speed={0.9}>
         <Panorama0 className="fill-(--forest-6) theme-transition absolute bottom-0 left-0 w-full h-full" />
+        <div className="absolute bg-(--forest-6) theme-transition w-full h-1/3 margin top-full"/>
       </Parallax.Layer>
     </Parallax>
   );
