@@ -10,7 +10,9 @@ export default defineConfig({
     tailwindcss(),
     svgr()
   ],
-  
+  server: {
+    host: "0.0.0.0",
+  },
   resolve: {
     alias: {
       '@components': '/src/components',
