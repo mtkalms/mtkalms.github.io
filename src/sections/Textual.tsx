@@ -16,19 +16,20 @@ function Textual() {
               speed={0.05}
               className="relative mb-12 w-full text-left"
             >
-              <pre className="text-(--accent-1) dark:glow-(--accent-1) leading-none font-mono text-lg lg:text-2xl">
+              <pre className="text-(--accent-1) dark:glow-(--accent-1) leading-none font-mono text-lg lg:text-xl">
                 {/* prettier-ignore */}
                 <>
-              <span>┬┬╮    ╷       .   ╷  ┐    </span><br/>
-              <span>│││╭╮╭┐┼ ┌╮┬╮╭┐┐ ╭┐┼┐╷│╭╮╭┐</span><br/>
-              <span>│││││╰╮│ ╭┤││╰╮│ ╰╮││││├┘╰╮</span><br/>
-              <span>╵╵╵╰╯└╯╰ ╰┘╵╵└╯╵ └╯╰╰┤╰╰╴└╯</span><br/>
-              <span>                    └╯     </span><br/>
-              </>
-                enter{" "}
-                <span className="animate-pulse text-(--accent-2) dark:glow-(--accent-2)">
-                  █
-                </span>
+                  <span>┌┬┐      .    ┐ ┌┬┐            ┐   </span><br/>
+                  <span> │╭╮┬╮┬┬╮┐┬╮┌╮│  │┐╷┬╮╭╮╭┬┬╮╮┬╮├╮┐╷</span><br/>
+                  <span> │├┘│ ││││││╭┤│  ││││││││││╭┤││││││</span><br/>
+                  <span> ╵╰╴╵ ╵╵╵╵╵╵╰┘╰  ╵╰┤├╯╰╯╰┤╵╰┘├╯╵╵╰┤</span><br/>
+                  <span>                  └╯╵   └╯   ╵   └╯</span><br/>
+                  <span> enter{" "}
+                    <span className="animate-pulse text-(--accent-2) dark:glow-(--accent-2)">
+                      █
+                    </span>
+                  </span>
+                </>
               </pre>
             </Parallax.Layer>
           </Parallax>
