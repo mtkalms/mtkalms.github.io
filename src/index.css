@@ -21,6 +21,15 @@
   --font-mono: "Cascadia Code", ui-monospace, monospace;
 }
 
+@utility glow-* {
+  --glow-color: --value(--color-*, [*]);
+  text-shadow:
+    0 0 5px color-mix(in srgb, var(--glow-color) 60%, transparent),
+    0 0 10px color-mix(in srgb, var(--glow-color) 40%, transparent),
+    0 0 20px color-mix(in srgb, var(--glow-color) 30%, transparent),
+    0 0 30px color-mix(in srgb, var(--glow-color) 20%, transparent);
+}
+
 :root {
   --horizon: #dfb3b7;
   --forest-1: #7c89a7;
@@ -83,14 +92,9 @@ body {
   body {
     transition: background-color var(--forest-transition) ease;
   }
-}
 
-.dark {
-  .glow {
-    text-shadow:
-      0 0 5px rgba(255, 255, 255, 0.6),
-      0 0 10px rgba(255, 255, 255, 0.4),
-      0 0 20px rgba(255, 255, 255, 0.3),
-      0 0 30px rgba(255, 255, 255, 0.2);
+  [class*="glow-"] {
+    transition: text-shadow var(--forest-transition) ease;
   }
 }
+

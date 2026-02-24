@@ -5,7 +5,7 @@ function Textual() {
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div>
         <Parallax.Layer speed={0.05} className="relative my-12">
-          <h2 className="glow leading-none uppercase md:text-7xl text-5xl font-bold">
+          <h2 className="dark:glow-white leading-none uppercase lg:text-7xl text-5xl font-bold">
             Textual Light <br />
             and Magic
           </h2>
@@ -16,7 +16,7 @@ function Textual() {
               speed={0.05}
               className="relative mb-12 w-full text-left"
             >
-              <pre className="glow leading-none font-mono text-lg lg:text-2xl">
+              <pre className="text-(--accent-1) dark:glow-(--accent-1) leading-none font-mono text-lg lg:text-2xl">
                 {/* prettier-ignore */}
                 <>
               <span>┬┬╮    ╷       .   ╷  ┐    </span><br/>
@@ -25,11 +25,14 @@ function Textual() {
               <span>╵╵╵╰╯└╯╰ ╰┘╵╵└╯╵ └╯╰╰┤╰╰╴└╯</span><br/>
               <span>                    └╯     </span><br/>
               </>
-                enter <span className="animate-pulse">█</span>
+                enter{" "}
+                <span className="animate-pulse text-(--accent-2) dark:glow-(--accent-2)">
+                  █
+                </span>
               </pre>
             </Parallax.Layer>
           </Parallax>
-          <div className="text-left max-w-xl lg:p-12 text-(--forest-1)">
+          <div className="text-left max-w-xl  px-16 lg:px-12 text-(--forest-1)">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
