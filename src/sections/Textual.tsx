@@ -33,7 +33,7 @@ function Textual() {
               </pre>
             </Parallax.Layer>
           </Parallax>
-          <div className="text-left max-w-xl  px-16 lg:px-12 text-(--forest-1)">
+          <div className="text-left max-w-xl px-16 lg:px-12">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

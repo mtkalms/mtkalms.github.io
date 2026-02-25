@@ -30,6 +30,21 @@
     0 0 30px color-mix(in srgb, var(--glow-color) 20%, transparent);
 }
 
+@layer base {
+  body {
+    @apply text-neutral-300;
+  }
+  @variant dark {
+    body {
+      @apply text-slate-400;
+    }
+  }
+  h1,
+  h2 {
+    @apply text-white;
+  }
+}
+
 :root {
   --horizon: #dfb3b7;
   --forest-1: #7c89a7;
@@ -97,4 +112,3 @@ body {
     transition: text-shadow var(--forest-transition) ease;
   }
 }
-
