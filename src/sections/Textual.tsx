@@ -1,39 +1,40 @@
 import Parallax from "../components/Parallax";
 
+// prettier-ignore
+// eslint-disable-next-line
+function TypographyExample() {
+  return (
+    <pre className="font-mono text-lg leading-none text-(--accent-1) lg:text-xl dark:glow-(--accent-1)">
+      <span>┌┬┐      .    ┐ ┌┬┐            ┐   </span><br/>
+      <span> │╭╮┬╮┬┬╮┐┬╮┌╮│  │┐╷┬╮╭╮╭┬┬╮╮┬╮├╮┐╷</span><br/>
+      <span> │├┘│ ││││││╭┤│  ││││││││││╭┤││││││</span><br/>
+      <span> ╵╰╴╵ ╵╵╵╵╵╵╰┘╰  ╵╰┤├╯╰╯╰┤╵╰┘├╯╵╵╰┤</span><br/>
+      <span>                  └╯╵   └╯   ╵   └╯</span><br/>
+      <span> enter <span className="animate-pulse text-(--accent-2) dark:glow-(--accent-2)">█</span></span>
+    </pre>
+  )
+}
+
 function Textual() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div className="flex min-h-screen flex-col items-center justify-center">
       <div>
         <Parallax.Layer speed={0.05} className="relative my-12">
-          <h2 className="dark:glow-white leading-none uppercase lg:text-7xl text-5xl font-bold">
+          <h2 className="text-5xl leading-none font-bold uppercase lg:text-7xl dark:glow-white">
             Textual Light <br />
             and Magic
           </h2>
         </Parallax.Layer>
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
           <Parallax className="relative overflow-visible">
             <Parallax.Layer
               speed={0.05}
               className="relative mb-12 w-full text-left"
             >
-              <pre className="text-(--accent-1) dark:glow-(--accent-1) leading-none font-mono text-lg lg:text-xl">
-                {/* prettier-ignore */}
-                <>
-                  <span>┌┬┐      .    ┐ ┌┬┐            ┐   </span><br/>
-                  <span> │╭╮┬╮┬┬╮┐┬╮┌╮│  │┐╷┬╮╭╮╭┬┬╮╮┬╮├╮┐╷</span><br/>
-                  <span> │├┘│ ││││││╭┤│  ││││││││││╭┤││││││</span><br/>
-                  <span> ╵╰╴╵ ╵╵╵╵╵╵╰┘╰  ╵╰┤├╯╰╯╰┤╵╰┘├╯╵╵╰┤</span><br/>
-                  <span>                  └╯╵   └╯   ╵   └╯</span><br/>
-                  <span> enter{" "}
-                    <span className="animate-pulse text-(--accent-2) dark:glow-(--accent-2)">
-                      █
-                    </span>
-                  </span>
-                </>
-              </pre>
+              <TypographyExample />
             </Parallax.Layer>
           </Parallax>
-          <div className="text-left max-w-xl px-16 lg:px-12">
+          <div className="max-w-xl px-16 text-left lg:px-12">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
