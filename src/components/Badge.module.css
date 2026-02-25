@@ -16,5 +16,5 @@
   @apply bottom-0 left-0;
 }
 .bottom-right {
-  @apply bottom-0 right-0;
+  @apply right-0 bottom-0;
 }

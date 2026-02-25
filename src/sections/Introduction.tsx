@@ -3,11 +3,11 @@ import Avatar from "../components/Avatar";
 
 function Introduction() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center text-center">
-      <div className="flex flex-col gap-8 items-center">
+    <div className="flex min-h-screen w-full flex-col items-center justify-center text-center">
+      <div className="flex flex-col items-center gap-8">
         <Avatar
           image={profile}
-          className="w-40 sm:w-60 ring-white ring-8 shadow-2xl"
+          className="w-40 shadow-2xl ring-8 ring-white sm:w-60"
         />
         <div>
           <h1 className="text-6xl font-thin">

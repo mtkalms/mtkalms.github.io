@@ -14,8 +14,19 @@ import {
 import Badge from "./Badge";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-type Skill = "python" | "ruby" | "typescript" | "javascript" | "vaadin" | "java" | "react" | "tailwind css";
-type DivElement = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type Skill =
+  | "python"
+  | "ruby"
+  | "typescript"
+  | "javascript"
+  | "vaadin"
+  | "java"
+  | "react"
+  | "tailwind css";
+type DivElement = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 
 interface SkillIconProps extends IconBaseProps {
   skill: Skill;
@@ -26,42 +37,41 @@ interface SkillBadgeProps extends Omit<DivElement, "children"> {
   experience: number;
 }
 
-function SkillIcon({
-  skill, 
-  ...props
-}: SkillIconProps) {
+function SkillIcon({ skill, ...props }: SkillIconProps) {
   switch (skill) {
     case "python":
-      return <Python {...props}/>;
+      return <Python {...props} />;
     case "ruby":
-      return <Ruby className="rotate-45 -translate-y-1" {...props}/>;
+      return <Ruby className="-translate-y-1 rotate-45" {...props} />;
     case "typescript":
-      return <Typescript {...props}/>;
+      return <Typescript {...props} />;
     case "javascript":
-      return <Javascript {...props}/>;
+      return <Javascript {...props} />;
     case "java":
-      return <Java {...props}/>;
+      return <Java {...props} />;
     case "react":
-      return <React {...props}/>;
+      return <React {...props} />;
     case "tailwind css":
-      return <Tailwind {...props}/>;
+      return <Tailwind {...props} />;
     case "vaadin":
-      return <Vaadin {...props}/>;
+      return <Vaadin {...props} />;
   }
 }
 
-function SkillBadge({ 
-  skill, 
-  experience, 
-  className, 
-  ...props 
+function SkillBadge({
+  skill,
+  experience,
+  className,
+  ...props
 }: SkillBadgeProps) {
   return (
-    <div className={`rounded-full relative size-16 bg-fuchsia-800 ${className}`} 
+    <div
+      className={`relative size-16 rounded-full bg-fuchsia-800 ${className}`}
       title={`${experience}+ years in ${skill}`}
-      {...props}>
-      <div className="rounded-full size-full flex items-center justify-center text-white">
-        <SkillIcon skill={skill} className="size-6/12"/>
+      {...props}
+    >
+      <div className="flex size-full items-center justify-center rounded-full text-white">
+        <SkillIcon skill={skill} className="size-6/12" />
       </div>
       <Badge position="top-right" className="bg-fuchsia-900 text-white">
         {`${experience}+`}

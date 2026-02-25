@@ -38,7 +38,7 @@ function Parallax({ children, className }: ParallaxProps) {
 function ParallaxLayer({ children, className, speed }: ParallaxLayerProps) {
   return (
     <div
-      className={`parallax-layer absolute bottom-0 left-0 w-full h-full will-change-transform ${className}`}
+      className={`parallax-layer absolute bottom-0 left-0 h-full w-full will-change-transform ${className}`}
       style={{
         transform: `translateY(calc(var(--scroll-y, 0) * -${speed}px))`,
       }}

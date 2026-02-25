@@ -14,12 +14,12 @@ function App() {
         <Introduction />
         <Textual />
       </div>
-      <footer className="w-full bottom-0 py-12">
-        <div className="px-16 py-4 flex justify-between">
+      <footer className="bottom-0 w-full py-12">
+        <div className="flex justify-between px-16 py-4">
           <p className="text-sm opacity-70">
             © {new Date().getFullYear()} mtkalms. All rights reserved.
           </p>
-          <div className="flex justify-center gap-4 mb-6">
+          <div className="mb-6 flex justify-center gap-4">
             <SocialBadge
               type="Linkedin"
               href="https://linkedin.com/in/matthias-kalms"

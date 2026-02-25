@@ -8,25 +8,25 @@ import Panorama5 from "@/assets/panorama-5.svg?react";
 
 function Panorama() {
   return (
-    <Parallax className="panorama horizon bg-(--horizon) fixed top-0 left-0 w-full h-full -z-1">
+    <Parallax className="panorama horizon fixed top-0 left-0 -z-1 h-full w-full bg-(--horizon)">
       <Parallax.Layer speed={0.1}>
-        <Panorama5 className="fill-(--forest-1) theme-transition absolute bottom-0 left-0 w-full h-full" />
+        <Panorama5 className="theme-transition absolute bottom-0 left-0 h-full w-full fill-(--forest-1)" />
       </Parallax.Layer>
       <Parallax.Layer speed={0.2}>
-        <Panorama4 className="fill-(--forest-2) theme-transition absolute bottom-0 left-0 w-full h-full" />
+        <Panorama4 className="theme-transition absolute bottom-0 left-0 h-full w-full fill-(--forest-2)" />
       </Parallax.Layer>
       <Parallax.Layer speed={0.35}>
-        <Panorama3 className="fill-(--forest-3) theme-transition absolute bottom-0 left-0 w-full h-full" />
+        <Panorama3 className="theme-transition absolute bottom-0 left-0 h-full w-full fill-(--forest-3)" />
       </Parallax.Layer>
       <Parallax.Layer speed={0.5}>
-        <Panorama2 className="fill-(--forest-4) theme-transition absolute bottom-0 left-0 w-full h-full" />
+        <Panorama2 className="theme-transition absolute bottom-0 left-0 h-full w-full fill-(--forest-4)" />
       </Parallax.Layer>
       <Parallax.Layer speed={0.7}>
-        <Panorama1 className="fill-(--forest-5) theme-transition absolute bottom-0 left-0 w-full h-full" />
+        <Panorama1 className="theme-transition absolute bottom-0 left-0 h-full w-full fill-(--forest-5)" />
       </Parallax.Layer>
       <Parallax.Layer speed={0.9}>
-        <Panorama0 className="fill-(--forest-6) theme-transition absolute bottom-0 left-0 w-full h-full" />
-        <div className="absolute bg-(--forest-6) theme-transition w-full h-1/3 margin top-full"/>
+        <Panorama0 className="theme-transition absolute bottom-0 left-0 h-full w-full fill-(--forest-6)" />
+        <div className="theme-transition margin absolute top-full h-1/3 w-full bg-(--forest-6)" />
       </Parallax.Layer>
     </Parallax>
   );
