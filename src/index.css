@@ -53,8 +53,8 @@
   --forest-4: #365b5e;
   --forest-5: #2c4d4e;
   --forest-6: #0f2324;
-  --accent-1: #9a29a6;
-  --accent-2: #c5a030;
+  --accent-1: #8a5fc8;
+  --accent-2: #c8a46a;
 
   --horizon-transition: 0.75s;
   --forest-transition: 1.25s;
@@ -68,6 +68,8 @@
   --forest-4: #1a2640;
   --forest-5: #121b30;
   --forest-6: #0a0e1f;
+  --accent-1: #bf8cff;
+  --accent-2: #ffd170;
 }
 
 html {
