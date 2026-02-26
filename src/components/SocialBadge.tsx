@@ -35,7 +35,7 @@ function SocialBadge({ type, href, className, ...props }: SocialBadgeProps) {
       <SocialIcon
         type={type}
         size={30}
-        className="fill-white hover:animate-pulse dark:fill-pink-300 dark:hover:fill-pink-200"
+        className="transition:fill transition:text duration-200 hover:fill-white hover:text-white"
         {...props}
       />
     </a>

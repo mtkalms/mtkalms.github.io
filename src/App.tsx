@@ -15,8 +15,8 @@ function App() {
         <Textual />
       </div>
       <footer className="bottom-0 w-full py-12">
-        <div className="flex justify-between px-16 py-4">
-          <p className="text-sm opacity-70">
+        <div className="flex items-center justify-between px-16 py-4">
+          <p className="text-sm opacity-80">
             © {new Date().getFullYear()} mtkalms. All rights reserved.
           </p>
           <div className="mb-6 flex justify-center gap-4">
