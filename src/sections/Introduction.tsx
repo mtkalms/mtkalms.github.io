@@ -5,10 +5,7 @@ function Introduction() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center text-center">
       <div className="flex flex-col items-center gap-8">
-        <Avatar
-          image={profile}
-          className="w-40 shadow-2xl ring-8 ring-white sm:w-60"
-        />
+        <Avatar image={profile} className="w-60 shadow-2xl ring-8 ring-white" />
         <div>
           <h1 className="text-6xl font-thin">
             <span className="font-normal">Hi. </span>I am{" "}
