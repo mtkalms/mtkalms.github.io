@@ -32,11 +32,11 @@
 
 @layer base {
   body {
-    @apply text-neutral-300;
+    color: var(--text-default);
   }
   @variant dark {
     body {
-      @apply text-slate-400;
+      color: var(--text-default);
     }
   }
   h1,
@@ -63,6 +63,7 @@
   --ansi-magenta: #aa63df;
   --ansi-cyan: #47a5b4;
   --ansi-white: #dbe3f2;
+  --text-default: #b7c5dc;
 
   --horizon-transition: 0.75s;
   --forest-transition: 1.25s;
@@ -86,6 +87,7 @@
   --ansi-magenta: #cf93ff;
   --ansi-cyan: #55d1e2;
   --ansi-white: #eef3ff;
+  --text-default: #9eaed0;
 }
 
 html {
