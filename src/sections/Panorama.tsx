@@ -5,6 +5,7 @@ import Panorama2 from "@/assets/panorama-2.svg?react";
 import Panorama3 from "@/assets/panorama-3.svg?react";
 import Panorama4 from "@/assets/panorama-4.svg?react";
 import Panorama5 from "@/assets/panorama-5.svg?react";
+import Introduction from "./Introduction";
 
 function Panorama() {
   return (
@@ -27,6 +28,11 @@ function Panorama() {
       <Parallax.Layer speed={0.9}>
         <Panorama0 className="theme-transition absolute bottom-0 left-0 h-full w-full fill-(--forest-6)" />
         <div className="theme-transition margin absolute top-full h-1/3 w-full bg-(--forest-6)" />
+      </Parallax.Layer>
+      <Parallax.Layer speed={0.7}>
+        <div className="absolute top-0 left-0 h-full w-full">
+          <Introduction />
+        </div>
       </Parallax.Layer>
     </Parallax>
   );

@@ -10,9 +10,6 @@ function App() {
     <>
       <Navbar />
       <Panorama />
-      <div className="absolute top-0 left-0 w-full">
-        <Introduction />
-      </div>
       <div className="main">
         <Textual />
       </div>
