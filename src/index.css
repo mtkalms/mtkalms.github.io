@@ -55,6 +55,14 @@
   --forest-6: #0f2324;
   --accent-1: #8a5fc8;
   --accent-2: #c8a46a;
+  --ansi-black: #0c1c22;
+  --ansi-red: #d0698e;
+  --ansi-green: #3a9a7c;
+  --ansi-yellow: #dfb14f;
+  --ansi-blue: #6c88d6;
+  --ansi-magenta: #aa63df;
+  --ansi-cyan: #47a5b4;
+  --ansi-white: #dbe3f2;
 
   --horizon-transition: 0.75s;
   --forest-transition: 1.25s;
@@ -70,6 +78,14 @@
   --forest-6: #0a0e1f;
   --accent-1: #bf8cff;
   --accent-2: #ffd170;
+  --ansi-black: #070b18;
+  --ansi-red: #ff6e97;
+  --ansi-green: #4acc9f;
+  --ansi-yellow: #ffd86a;
+  --ansi-blue: #7b9bff;
+  --ansi-magenta: #cf93ff;
+  --ansi-cyan: #55d1e2;
+  --ansi-white: #eef3ff;
 }
 
 html {
