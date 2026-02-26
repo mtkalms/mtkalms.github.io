@@ -10,8 +10,10 @@ function App() {
     <>
       <Navbar />
       <Panorama />
-      <div className="main">
+      <div className="absolute top-0 left-0 w-full">
         <Introduction />
+      </div>
+      <div className="main">
         <Textual />
       </div>
       <footer className="bottom-0 w-full py-12">
