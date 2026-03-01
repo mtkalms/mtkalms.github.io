@@ -20,7 +20,7 @@ function App() {
             <div className="flex flex-row">
               {navbarItems.map((item) => (
                 <div
-                  className="transition-border border-b-2 border-b-transparent px-2 py-3 text-xl duration-300 hover:border-b-white"
+                  className="transition-border border-b-2 border-b-transparent px-1 py-3 text-xl duration-300 hover:border-b-white"
                   key={item.label}
                 >
                   <a href={item.href}>{item.label}</a>
@@ -32,7 +32,8 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="h-[2px] w-full backdrop-blur-3xl" />
+        <div className="h-px w-full backdrop-blur-2xl" />
+        <div className="h-px w-full backdrop-blur-3xl" />
       </nav>
       <Panorama />
       <div className="main">
