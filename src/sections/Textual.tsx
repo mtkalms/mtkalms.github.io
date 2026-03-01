@@ -25,7 +25,7 @@ function Textual() {
             and Magic
           </h2>
         </Parallax.Layer>
-        <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+        <div className="flex flex-col items-center justify-between gap-16 lg:flex-row">
           <Parallax className="relative overflow-visible">
             <Parallax.Layer
               speed={0.05}
@@ -34,18 +34,15 @@ function Textual() {
               <TypographyExample />
             </Parallax.Layer>
           </Parallax>
-          <div className="max-w-xl px-16 text-left lg:px-12">
+          <div className="max-w-md text-left xl:max-w-xl">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
         </div>
