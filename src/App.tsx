@@ -1,12 +1,36 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
 import Panorama from "./sections/Panorama";
 import Textual from "./sections/Textual";
 import SocialBadge from "./components/SocialBadge";
+import ThemeModeToggle from "./components/ThemeModeToggle";
+
+const navbarItems = [
+  {
+    label: "portfolio",
+    href: "https://mtkalms.github.io/portfolio/",
+  },
+];
+
 function App() {
   return (
     <>
-      <Navbar />
+      <nav className="fixed top-0 left-0 z-50 w-full border-b border-b-white/10 text-white backdrop-blur-xl">
+        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-16">
+          <div className="flex flex-row">
+            {navbarItems.map((item) => (
+              <div
+                className="transition-border border-b border-b-white/0 px-2 py-3 text-xl duration-300 hover:border-b-white"
+                key={item.label}
+              >
+                <a href={item.href}>{item.label}</a>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-row">
+            <ThemeModeToggle />
+          </div>
+        </div>
+      </nav>
       <Panorama />
       <div className="main">
         <Textual />
