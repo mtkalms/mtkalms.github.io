@@ -19,18 +19,17 @@ function App() {
           <div className="mx-auto flex max-w-screen-xl flex-wrap items-stretch justify-between px-16">
             <div className="flex flex-row">
               {navbarItems.map((item) => (
-                <div
+                <a
                   className="transition-border border-b-2 border-b-transparent px-1 py-3 text-xl text-white/65 duration-300 hover:border-b-white hover:text-white"
                   key={item.label}
+                  href={item.href}
                 >
-                  <a href={item.href}>{item.label}</a>
-                </div>
+                  {item.label}
+                </a>
               ))}
             </div>
             <div className="flex flex-row">
-              <div className="transition-border flex border-b-2 border-b-transparent px-2 py-3 duration-300 hover:border-b-white">
-                <ThemeModeToggle />
-              </div>
+              <ThemeModeToggle className="transition-border flex border-b-2 border-b-transparent stroke-white/65 px-2 py-3 transition-colors duration-300 hover:border-b-white hover:stroke-white" />
             </div>
           </div>
         </div>

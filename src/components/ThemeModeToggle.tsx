@@ -76,7 +76,7 @@ function ThemeModeToggle({ size = 25, ...props }: ThemeModeToggleProps) {
       <ThemeModeIcon
         size={25}
         mode={mode}
-        className="stroke-white/65 transition-colors duration-300 hover:stroke-white"
+        className="stroke-inherit"
         title={`Toggle theme (${mode})`}
         width={size}
         height={size}
