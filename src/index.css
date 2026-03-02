@@ -21,9 +21,18 @@
   --font-mono: "Cascadia Code", ui-monospace, monospace;
 }
 
-@utility glow-* {
+@utility text-glow-* {
   --glow-color: --value(--color-*, [*]);
   text-shadow:
+    0 0 5px color-mix(in srgb, var(--glow-color) 60%, transparent),
+    0 0 10px color-mix(in srgb, var(--glow-color) 40%, transparent),
+    0 0 20px color-mix(in srgb, var(--glow-color) 30%, transparent),
+    0 0 30px color-mix(in srgb, var(--glow-color) 20%, transparent);
+}
+
+@utility glow-* {
+  --glow-color: --value(--color-*, [*]);
+  box-shadow:
     0 0 5px color-mix(in srgb, var(--glow-color) 60%, transparent),
     0 0 10px color-mix(in srgb, var(--glow-color) 40%, transparent),
     0 0 20px color-mix(in srgb, var(--glow-color) 30%, transparent),

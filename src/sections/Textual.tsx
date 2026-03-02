@@ -4,13 +4,13 @@ import Parallax from "../components/Parallax";
 // eslint-disable-next-line
 function TypographyExample() {
   return (
-    <pre className="font-mono text-lg leading-none text-(--accent-1) lg:text-xl dark:glow-(--accent-1)">
+    <pre className="font-mono text-lg leading-none text-(--accent-1) lg:text-xl dark:text-glow-(--accent-1)">
       <span>┌┬┐      .    ┐ ┌┬┐            ┐   </span><br/>
       <span> │╭╮┬╮┬┬╮┐┬╮┌╮│  │┐╷┬╮╭╮╭┬┬╮╮┬╮├╮┐╷</span><br/>
       <span> │├┘│ ││││││╭┤│  ││││││││││╭┤││││││</span><br/>
       <span> ╵╰╴╵ ╵╵╵╵╵╵╰┘╰  ╵╰┤├╯╰╯╰┤╵╰┘├╯╵╵╰┤</span><br/>
       <span>                  └╯╵   └╯   ╵   └╯</span><br/>
-      <span> enter <span className="animate-pulse text-(--accent-2) dark:glow-(--accent-2)">█</span></span>
+      <span> enter <span className="animate-pulse text-(--accent-2) dark:text-glow-(--accent-2)">█</span></span>
     </pre>
   )
 }
@@ -20,7 +20,7 @@ function Textual() {
     <div className="flex min-h-screen flex-col items-center justify-center">
       <div>
         <Parallax.Layer speed={0.05} className="relative my-12">
-          <h2 className="text-5xl leading-none font-bold uppercase lg:text-7xl dark:glow-white">
+          <h2 className="text-5xl leading-none font-bold uppercase lg:text-7xl dark:text-glow-white">
             Textual Light <br />
             and Magic
           </h2>
