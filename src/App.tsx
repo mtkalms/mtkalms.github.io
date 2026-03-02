@@ -16,11 +16,11 @@ function App() {
     <>
       <nav className="fixed top-0 left-0 z-50 w-full border-b border-b-white/10 text-white">
         <div className="-mb-[2px] backdrop-blur-xl">
-          <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-16">
+          <div className="mx-auto flex max-w-screen-xl flex-wrap items-stretch justify-between px-16">
             <div className="flex flex-row">
               {navbarItems.map((item) => (
                 <div
-                  className="transition-border border-b-2 border-b-transparent px-1 py-3 text-xl duration-300 hover:border-b-white"
+                  className="transition-border border-b-2 border-b-transparent px-1 py-3 text-xl text-white/65 duration-300 hover:border-b-white hover:text-white"
                   key={item.label}
                 >
                   <a href={item.href}>{item.label}</a>
@@ -28,7 +28,9 @@ function App() {
               ))}
             </div>
             <div className="flex flex-row">
-              <ThemeModeToggle />
+              <div className="transition-border flex border-b-2 border-b-transparent px-2 py-3 duration-300 hover:border-b-white">
+                <ThemeModeToggle />
+              </div>
             </div>
           </div>
         </div>
