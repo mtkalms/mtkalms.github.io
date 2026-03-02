@@ -47,6 +47,7 @@
 
 :root {
   --horizon: #dfb3b7;
+  --horizon-sky: #6d7faa;
   --forest-1: #7c89a7;
   --forest-2: #69869b;
   --forest-3: #4a6f73;
@@ -70,7 +71,8 @@
 }
 
 .dark {
-  --horizon: #1a1535;
+  --horizon: #373256;
+  --horizon-sky: #1a1535;
   --forest-1: #3d4a6e;
   --forest-2: #2f3d5e;
   --forest-3: #25334f;

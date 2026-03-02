@@ -3,7 +3,7 @@ import Introduction from "./Introduction";
 
 function Panorama() {
   return (
-    <Parallax className="panorama horizon fixed top-0 left-0 -z-1 h-full w-full bg-(--horizon)">
+    <Parallax className="panorama horizon fixed top-0 left-0 -z-1 h-full w-full bg-[linear-gradient(to_bottom,var(--horizon-sky)_0%,var(--horizon)_40%)]">
       <Parallax.Layer speed={0.1}>
         <div className="theme-transition absolute bottom-0 left-0 h-full w-full bg-(--forest-1) mask-[url('./assets/panorama-5.svg')] mask-cover mask-center" />
       </Parallax.Layer>
