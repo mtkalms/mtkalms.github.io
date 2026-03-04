@@ -31,7 +31,7 @@ function SocialIcon({ type, ...props }: SocialIconProps) {
 
 function SocialBadge({ type, href, className, ...props }: SocialBadgeProps) {
   return (
-    <a href={href} target="_blank" className="className">
+    <a href={href} className={className}>
       <SocialIcon
         type={type}
         size={30}

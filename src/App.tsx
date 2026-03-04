@@ -14,6 +14,7 @@ const navbarItems = [
 function App() {
   return (
     <>
+      {/* Navbar */}
       <nav className="fixed top-0 left-0 z-50 w-full border-b border-b-white/10 text-white">
         <div className="-mb-[2px] backdrop-blur-xl">
           <div className="mx-auto flex max-w-screen-xl flex-wrap items-stretch justify-between px-16">
@@ -36,10 +37,15 @@ function App() {
         <div className="h-px w-full backdrop-blur-2xl" />
         <div className="h-px w-full backdrop-blur-3xl" />
       </nav>
-      <Panorama />
-      <div className="main">
-        <Textual />
-      </div>
+      {/* Main content */}
+      <main>
+        {/* Hero Section */}
+        <Panorama />
+        {/* Sections */}
+        <div className="mt-[100vh] px-8 py-2 min-h-auto">
+          <Textual />
+        </div>
+      </main>
       <div className="h-40 w-full bg-(--forest-1) mask-[url('./assets/pattern-stack.svg')] bg-size-[auto_100%] bg-repeat-x" />
       <footer className="bottom-0 w-full py-12">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-16 py-4">

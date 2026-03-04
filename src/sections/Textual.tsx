@@ -17,7 +17,7 @@ function TypographyExample() {
 
 function Textual() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center">
+    <section className="flex min-h-screen flex-col items-center justify-center">
       <div>
         <Parallax.Layer speed={0.05} className="relative my-12">
           <h2 className="text-5xl leading-none font-bold uppercase lg:text-7xl dark:text-glow-white">
@@ -47,7 +47,7 @@ function Textual() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

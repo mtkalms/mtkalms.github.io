@@ -3,7 +3,7 @@ import Avatar from "../components/Avatar";
 
 function Introduction() {
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center text-center">
+    <section className="flex min-h-screen w-full flex-col items-center justify-center text-center">
       <div className="flex flex-col items-center gap-8">
         <div className="rounded-full p-[8px] glow-(--horizon) dark:text-glow-white">
           <Avatar image={profile} className="w-60 ring-8 ring-white" />
@@ -18,7 +18,7 @@ function Introduction() {
           </h1>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
