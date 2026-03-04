@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { usePrefersReducedMotion } from "../hooks/media-query";
 
 interface ParallaxProps {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ interface ParallaxLayerProps {
 
 function Parallax({ children, className }: ParallaxProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const el = ref.current;
@@ -20,13 +22,17 @@ function Parallax({ children, className }: ParallaxProps) {
 
     const handleScroll = () => {
       const relativeScroll = window.scrollY - el.offsetTop;
-      el.style.setProperty("--scroll-y", relativeScroll.toString());
+      if (prefersReducedMotion) {
+        el.style.setProperty("--scroll-y", "0");
+      } else {
+        el.style.setProperty("--scroll-y", relativeScroll.toString());
+      }
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <div ref={ref} className={`parallax overflow-hidden ${className}`}>
