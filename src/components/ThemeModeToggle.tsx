@@ -74,13 +74,10 @@ function ThemeModeToggle({ size = 25, ...props }: ThemeModeToggleProps) {
   return (
     <button type="button" onClick={toggle} {...props}>
       <ThemeModeIcon
-        size={25}
+        size={size}
         mode={mode}
         className="stroke-inherit"
         title={`Toggle theme (${mode})`}
-        width={size}
-        height={size}
-        suppressHydrationWarning
       />
     </button>
   );

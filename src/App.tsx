@@ -1,13 +1,16 @@
+import { useRef } from "react";
 import "./App.css";
 import QrPopover, { QrCodeEntry } from "./components/QrPopover";
 import SocialBadge from "./components/SocialBadge";
 import ThemeModeToggle from "./components/ThemeModeToggle";
+import useDismissable from "./hooks/dismissable";
 import Panorama from "./sections/Panorama";
 import Textual from "./sections/Textual";
+import { TbQrcode as Qrcode } from "react-icons/tb";
 
 const navbarItems = [
   {
-    label: "portfolio",
+    label: "Portfolio",
     href: "https://mtkalms.github.io/portfolio/",
   },
 ];
@@ -30,13 +33,26 @@ const socialLinks = new Map<string, QrCodeEntry>([
 ]);
 
 function App() {
+  const popoverRef = useRef<HTMLDivElement | null>(null);
+  const [qrCodesOpen, setQrCodesOpen] = useDismissable(popoverRef);
   return (
     <>
       {/* Navbar */}
       <nav className="fixed top-0 left-0 z-50 w-full border-b border-b-white/10 text-white">
         <div className="-mb-[2px] backdrop-blur-xl">
           <div className="mx-auto flex max-w-screen-xl flex-wrap items-stretch justify-between px-16">
-            <div className="flex flex-row">
+            <div className="flex flex-row gap-2">
+              <button
+                type="button"
+                onClick={() => setQrCodesOpen((open) => !open)}
+                className="transition-border flex flex-col items-center justify-center border-b-2 border-b-transparent stroke-white/65 p-0 px-2 py-3 transition-colors duration-300 hover:border-b-white hover:stroke-white"
+              >
+                <Qrcode
+                  size={25}
+                  className="stroke-inherit"
+                  title="Toggle QR popover"
+                />
+              </button>
               {navbarItems.map((item) => (
                 <a
                   className="transition-border border-b-2 border-b-transparent px-1 py-3 text-xl text-white/65 duration-300 hover:border-b-white hover:text-white"
@@ -48,16 +64,23 @@ function App() {
               ))}
             </div>
             <div className="flex flex-row">
-              <ThemeModeToggle className="transition-border flex border-b-2 border-b-transparent stroke-white/65 px-2 py-3 transition-colors duration-300 hover:border-b-white hover:stroke-white" />
-              <QrPopover
-                codes={socialLinks}
-                className="transition-border flex border-b-2 border-b-transparent stroke-white/65 px-2 py-3 transition-colors duration-300 hover:border-b-white hover:stroke-white"
-              />
+              <ThemeModeToggle className="transition-border flex flex-col items-center border-b-2 border-b-transparent stroke-white/65 px-2 py-3 transition-colors duration-300 hover:border-b-white hover:stroke-white" />
             </div>
           </div>
         </div>
         <div className="h-px w-full backdrop-blur-2xl" />
         <div className="h-px w-full backdrop-blur-3xl" />
+        {qrCodesOpen && (
+          <div className="mx-auto max-w-screen-xl">
+            <div className="relative mx-16">
+              <QrPopover
+                codes={socialLinks}
+                ref={popoverRef}
+                className="rounded-2xl border border-white/10 p-2 text-white shadow-2xl backdrop-blur-xl"
+              />
+            </div>
+          </div>
+        )}
       </nav>
       {/* Main content */}
       <main>
