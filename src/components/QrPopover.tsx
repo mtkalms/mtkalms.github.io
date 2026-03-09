@@ -1,13 +1,13 @@
 import {
   ButtonHTMLAttributes,
   DetailedHTMLProps,
-  useEffect,
   useId,
   useRef,
   useState,
 } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { TbQrcode as Qrcode } from "react-icons/tb";
+import useDismissable from "../hooks/dismissable";
 
 interface QrCodeEntry {
   title: string;
@@ -28,7 +28,6 @@ function QrPopover({
   className = "",
   ...props
 }: QrPopoverProps) {
-  const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<string>(
     codes.keys().next().value || "",
   );
@@ -36,34 +35,7 @@ function QrPopover({
   const popoverRef = useRef<HTMLDivElement | null>(null);
   const popoverId = useId();
 
-  useEffect(() => {
-    if (!isOpen) return;
-
-    function handlePointerDown(event: MouseEvent | TouchEvent) {
-      const target = event.target as Node | null;
-      if (!target) return;
-      if (
-        popoverRef.current?.contains(target) ||
-        buttonRef.current?.contains(target)
-      )
-        return;
-      setIsOpen(false);
-    }
-
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setIsOpen(false);
-    }
-
-    document.addEventListener("mousedown", handlePointerDown);
-    document.addEventListener("touchstart", handlePointerDown);
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("mousedown", handlePointerDown);
-      document.removeEventListener("touchstart", handlePointerDown);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen]);
+  const [isOpen, setIsOpen] = useDismissable(popoverRef, buttonRef);
 
   const activeEntry = codes.get(activeTab);
 
@@ -103,6 +75,7 @@ function QrPopover({
           >
             {Array.from(codes?.entries() || []).map(([id, entry]) => (
               <button
+                key={id}
                 type="button"
                 role="tab"
                 aria-selected={activeTab === id}
