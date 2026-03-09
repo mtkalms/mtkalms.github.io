@@ -1,8 +1,9 @@
 import "./App.css";
-import Panorama from "./sections/Panorama";
-import Textual from "./sections/Textual";
+import QrPopover from "./components/QrPopover";
 import SocialBadge from "./components/SocialBadge";
 import ThemeModeToggle from "./components/ThemeModeToggle";
+import Panorama from "./sections/Panorama";
+import Textual from "./sections/Textual";
 
 const navbarItems = [
   {
@@ -10,6 +11,11 @@ const navbarItems = [
     href: "https://mtkalms.github.io/portfolio/",
   },
 ];
+
+const socialLinks = {
+  linkedin: "https://linkedin.com/in/matthias-kalms",
+  github: "https://github.com/mtkalms",
+};
 
 function App() {
   return (
@@ -31,6 +37,11 @@ function App() {
             </div>
             <div className="flex flex-row">
               <ThemeModeToggle className="transition-border flex border-b-2 border-b-transparent stroke-white/65 px-2 py-3 transition-colors duration-300 hover:border-b-white hover:stroke-white" />
+              <QrPopover
+                linkedinUrl={socialLinks.linkedin}
+                githubUrl={socialLinks.github}
+                className="transition-border flex border-b-2 border-b-transparent stroke-white/65 px-2 py-3 transition-colors duration-300 hover:border-b-white hover:stroke-white"
+              />
             </div>
           </div>
         </div>
@@ -53,11 +64,8 @@ function App() {
             © {new Date().getFullYear()} mtkalms. All rights reserved.
           </p>
           <div className="mb-6 flex justify-center gap-4">
-            <SocialBadge
-              type="Linkedin"
-              href="https://linkedin.com/in/matthias-kalms"
-            />
-            <SocialBadge type="Github" href="https://github.com/mtkalms" />
+            <SocialBadge type="Linkedin" href={socialLinks.linkedin} />
+            <SocialBadge type="Github" href={socialLinks.github} />
           </div>
         </div>
       </footer>
