@@ -1,5 +1,5 @@
 import "./App.css";
-import QrPopover from "./components/QrPopover";
+import QrPopover, { QrCodeEntry } from "./components/QrPopover";
 import SocialBadge from "./components/SocialBadge";
 import ThemeModeToggle from "./components/ThemeModeToggle";
 import Panorama from "./sections/Panorama";
@@ -12,10 +12,22 @@ const navbarItems = [
   },
 ];
 
-const socialLinks = {
-  linkedin: "https://linkedin.com/in/matthias-kalms",
-  github: "https://github.com/mtkalms",
-};
+const socialLinks = new Map<string, QrCodeEntry>([
+  [
+    "linkedin",
+    {
+      title: "LinkedIn",
+      url: "https://linkedin.com/in/matthias-kalms",
+    },
+  ],
+  [
+    "github",
+    {
+      title: "GitHub",
+      url: "https://github.com/mtkalms",
+    },
+  ],
+]);
 
 function App() {
   return (
@@ -38,8 +50,7 @@ function App() {
             <div className="flex flex-row">
               <ThemeModeToggle className="transition-border flex border-b-2 border-b-transparent stroke-white/65 px-2 py-3 transition-colors duration-300 hover:border-b-white hover:stroke-white" />
               <QrPopover
-                linkedinUrl={socialLinks.linkedin}
-                githubUrl={socialLinks.github}
+                codes={socialLinks}
                 className="transition-border flex border-b-2 border-b-transparent stroke-white/65 px-2 py-3 transition-colors duration-300 hover:border-b-white hover:stroke-white"
               />
             </div>
@@ -53,7 +64,7 @@ function App() {
         {/* Hero Section */}
         <Panorama />
         {/* Sections */}
-        <div className="mt-[100vh] px-8 py-2 min-h-auto">
+        <div className="mt-[100vh] min-h-auto px-8 py-2">
           <Textual />
         </div>
       </main>
@@ -64,8 +75,14 @@ function App() {
             © {new Date().getFullYear()} mtkalms. All rights reserved.
           </p>
           <div className="mb-6 flex justify-center gap-4">
-            <SocialBadge type="Linkedin" href={socialLinks.linkedin} />
-            <SocialBadge type="Github" href={socialLinks.github} />
+            <SocialBadge
+              type="Linkedin"
+              href={socialLinks.get("linkedin")?.url || ""}
+            />
+            <SocialBadge
+              type="Github"
+              href={socialLinks.get("github")?.url || ""}
+            />
           </div>
         </div>
       </footer>

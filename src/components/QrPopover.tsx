@@ -9,26 +9,29 @@ import {
 import { QRCodeSVG } from "qrcode.react";
 import { TbQrcode as Qrcode } from "react-icons/tb";
 
-type QrTab = "linkedin" | "github";
+interface QrCodeEntry {
+  title: string;
+  url: string;
+}
 
 interface QrPopoverProps extends DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 > {
-  githubUrl: string;
-  linkedinUrl: string;
+  codes?: Map<string, QrCodeEntry>;
   size?: number;
 }
 
 function QrPopover({
   size = 25,
-  githubUrl,
-  linkedinUrl,
+  codes = new Map<string, QrCodeEntry>(),
   className = "",
   ...props
 }: QrPopoverProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<QrTab>("linkedin");
+  const [activeTab, setActiveTab] = useState<string>(
+    codes.keys().next().value || "",
+  );
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const popoverRef = useRef<HTMLDivElement | null>(null);
   const popoverId = useId();
@@ -62,8 +65,7 @@ function QrPopover({
     };
   }, [isOpen]);
 
-  const activeLabel = activeTab === "linkedin" ? "LinkedIn" : "GitHub";
-  const activeUrl = activeTab === "linkedin" ? linkedinUrl : githubUrl;
+  const activeEntry = codes.get(activeTab);
 
   return (
     <div className="relative flex">
@@ -80,7 +82,7 @@ function QrPopover({
         <Qrcode
           size={size}
           className="stroke-inherit"
-          title={`Toggle QR popover (${activeLabel})`}
+          title={`Toggle QR popover (${activeEntry?.title})`}
           width={size}
           height={size}
           suppressHydrationWarning
@@ -92,57 +94,37 @@ function QrPopover({
           ref={popoverRef}
           role="dialog"
           aria-label="Social QR codes"
-          className="fixed top-[4.25rem] left-1/2 z-[60] w-[calc(100vw-1rem)] max-w-[36rem] -translate-x-1/2 rounded-2xl border border-white/15 bg-white/10 p-3 text-white shadow-2xl backdrop-blur-xl dark:bg-white/5 md:absolute md:top-full md:right-0 md:left-auto md:mt-2 md:w-[22rem] md:max-w-[22rem] md:translate-x-0"
+          className="fixed top-[4.25rem] left-1/2 z-[60] w-[calc(100vw-1rem)] max-w-[36rem] -translate-x-1/2 rounded-2xl border border-white/15 bg-white/10 p-3 text-white shadow-2xl backdrop-blur-xl md:absolute md:top-full md:right-0 md:left-auto md:mt-2 md:w-[22rem] md:max-w-[22rem] md:translate-x-0 dark:bg-white/5"
         >
           <div
             className="mb-3 grid grid-cols-2 rounded-xl border border-white/10 bg-black/20 p-1"
             role="tablist"
             aria-label="Social QR tabs"
           >
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeTab === "linkedin"}
-              className={`rounded-lg px-3 py-1.5 text-sm transition-colors ${
-                activeTab === "linkedin"
-                  ? "bg-white/20 text-white"
-                  : "text-white/70 hover:text-white"
-              }`}
-              onClick={() => setActiveTab("linkedin")}
-            >
-              LinkedIn
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeTab === "github"}
-              className={`rounded-lg px-3 py-1.5 text-sm transition-colors ${
-                activeTab === "github"
-                  ? "bg-white/20 text-white"
-                  : "text-white/70 hover:text-white"
-              }`}
-              onClick={() => setActiveTab("github")}
-            >
-              GitHub
-            </button>
+            {Array.from(codes?.entries() || []).map(([id, entry]) => (
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeTab === id}
+                className={`rounded-lg px-3 py-1.5 text-sm transition-colors ${
+                  activeTab === id
+                    ? "bg-white/20 text-white"
+                    : "text-white/70 hover:text-white"
+                }`}
+                onClick={() => setActiveTab(id)}
+              >
+                {entry.title}
+              </button>
+            ))}
           </div>
           <div className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-4">
             <QRCodeSVG
-              value={activeUrl}
+              value={activeEntry?.url || ""}
               size={200}
-              includeMargin
               bgColor="transparent"
               fgColor="currentColor"
               className="text-white"
             />
-            <a
-              href={activeUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="max-w-full truncate text-sm text-white/85 underline decoration-white/40 underline-offset-4 hover:text-white"
-            >
-              {activeUrl}
-            </a>
           </div>
         </div>
       )}
@@ -151,4 +133,4 @@ function QrPopover({
 }
 
 export default QrPopover;
-export type { QrPopoverProps };
+export type { QrPopoverProps, QrCodeEntry };
