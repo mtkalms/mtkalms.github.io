@@ -76,7 +76,7 @@ function App() {
               <QrPopover
                 codes={socialLinks}
                 ref={popoverRef}
-                className="rounded-2xl border border-white/10 p-2 text-white shadow-2xl backdrop-blur-xl"
+                className="rounded-xl border-2 border-white/10 text-white"
               />
             </div>
           </div>

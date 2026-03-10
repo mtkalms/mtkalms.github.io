@@ -27,36 +27,30 @@ function QrPopover({
       ref={ref}
       role="dialog"
       aria-label="Social QR codes"
-      className={`absolute top-2 right-1/2 z-60 w-[calc(100vw-2rem)] max-w-[36rem] translate-x-1/2 md:right-auto md:left-0 md:mt-2 md:w-[22rem] md:max-w-[22rem] md:translate-x-0 ${className}`}
+      className={`md:max-sm: absolute top-2 right-1/2 z-60 w-[calc(100vw-2rem)] max-w-sm translate-x-1/2 overflow-hidden md:right-auto md:left-0 md:w-2xs md:translate-x-0 ${className}`}
     >
-      <div
-        className="mb-3 grid grid-cols-2 rounded-xl border border-white/10 bg-black/20 p-1"
-        role="tablist"
-        aria-label="Social QR tabs"
-      >
-        {Array.from(codes?.entries() || []).map(([id, entry]) => (
-          <button
-            key={id}
-            type="button"
-            role="tab"
-            className={`rounded-lg px-3 py-1.5 text-sm transition-colors ${
-              activeTab === id
-                ? "bg-white/20 text-white"
-                : "text-white/70 hover:text-white"
-            }`}
-            onClick={() => setActiveTab(id)}
-          >
-            {entry.title}
-          </button>
-        ))}
-      </div>
-      <div className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-4">
+      <div className="backdrop-blur-xl">
+        <div className="z-auto flex flex-col">
+          <div className="-mb-[1.5px] grid grid-cols-2 backdrop-blur-2xl">
+            {Array.from(codes?.entries() || []).map(([id, entry]) => (
+              <button
+                key={id}
+                type="button"
+                role="tab"
+                className={`border-b border-b-transparent p-0 px-3 py-1.5 text-white/65 transition-colors duration-300 hover:text-white ${activeTab === id ? "border-b-white !text-white" : ""}`}
+                onClick={() => setActiveTab(id)}
+              >
+                {entry.title}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="h-[2px] backdrop-blur-3xl"></div>
         <QRCodeSVG
           value={codes.get(activeTab)?.url || ""}
-          size={200}
           bgColor="transparent"
           fgColor="currentColor"
-          className="text-white"
+          className="size-full p-4 text-white"
         />
       </div>
     </div>
